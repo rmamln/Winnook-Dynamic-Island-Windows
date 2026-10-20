@@ -195,6 +195,17 @@ nav b.brand{display:flex;align-items:center;gap:10px}
 .dl:hover{transform:translateY(-2px)}
 .dl svg{width:18px;height:18px}
 .soon{background:rgba(79,209,255,.16)!important;color:#8fe3ff!important}
+/* donasi */
+.donate{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:linear-gradient(135deg,#2a1a0a,var(--surface));border:1px solid #5a3a14;border-radius:20px;padding:28px 30px}
+.donate .cup{flex:none;width:56px;height:56px;border-radius:16px;background:rgba(255,176,64,.14);display:grid;place-items:center;color:#ffb040}
+.donate .cup svg{width:30px;height:30px}
+.donate div.t{flex:1;min-width:220px}
+.donate h3{font-size:20px;margin-bottom:6px}
+.donate p{color:var(--muted);font-size:15px}
+.sw-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#ffb040,#ff7a45);color:#1a0f03;font:600 15px Sora,sans-serif;text-decoration:none;padding:13px 24px;border-radius:99px;box-shadow:0 8px 30px rgba(255,140,60,.28);transition:transform .2s}
+.sw-btn:hover{transform:translateY(-2px)}
+.sw-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+footer a{color:#ffb040;text-decoration:none}footer a:hover{text-decoration:underline}
 a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -320,8 +331,16 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
     <div><small>Pembuat</small><b>Rama</b></div>
   </div>
 </section>
+<section id="dukung">
+  <h2>Dukung Winnook</h2>
+  <div class="donate">
+    <div class="cup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h1.5a2.5 2.5 0 0 1 0 5H16M7 3v2M10 3v2M13 3v2"/></svg></div>
+    <div class="t"><h3>Suka Winnook? Traktir kopi dong ☕</h3><p>Winnook gratis dan dibuat sendiri oleh Rama. Kalau kamu terbantu, traktiran kopi kecil bikin update berikutnya makin semangat.</p></div>
+    <a class="sw-btn" href="https://saweria.co/rmamln" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h1.5a2.5 2.5 0 0 1 0 5H16M7 3v2M10 3v2M13 3v2"/></svg>Traktir di Saweria</a>
+  </div>
+</section>
 </div>
-<footer>Winnook by Rama · 2026</footer>
+<footer>Winnook by Rama · 2026 · <a href="https://saweria.co/rmamln" target="_blank" rel="noopener">Traktir kopi ☕</a></footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
