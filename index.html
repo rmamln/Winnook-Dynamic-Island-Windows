@@ -67,10 +67,10 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 /* musik */
 .p-mu{flex-direction:column;gap:9px}
 .mu1{display:flex;align-items:center;gap:14px}
-.art{position:relative;flex:none;width:62px;height:62px;border-radius:12px;background:radial-gradient(circle at 58% 38%,#f1f1f1 0 9px,#8a8a8a 11px,#2a2a2e 34px,#0d0d10)}
+.art{position:relative;flex:none;width:62px;height:62px;border-radius:12px;background:url(cover.jpg) center/cover,radial-gradient(circle at 58% 38%,#f1f1f1 0 9px,#8a8a8a 11px,#2a2a2e 34px,#0d0d10)}
 .sp{position:absolute;left:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:#1ed760;border:2px solid #000}
 .sp svg{width:100%;height:100%}
-.mu1 b{display:block;font:600 17px Sora,sans-serif}.mu1 span{font-size:13px;color:#9aa0b4}
+.mu1 b{display:block;font:600 17px Sora,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mu1 span{display:block;font-size:13px;color:#9aa0b4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mu1>div:last-child{min-width:0}
 .mu2{display:flex;align-items:center;gap:12px;font-size:12px;color:#c3c7d6;font-variant-numeric:tabular-nums}
 .bar{flex:1;height:6px;border-radius:9px;background:#2a2c33;cursor:pointer;position:relative}
 .bar i{position:absolute;inset:0 auto 0 0;width:0;border-radius:9px;background:#d5d8e4}
@@ -186,6 +186,13 @@ h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
 .pw code{font:600 22px Sora,sans-serif;color:#9fd0ff;letter-spacing:.02em}
 .pw button{margin-left:auto;background:transparent;color:var(--text);border:1px solid #2d72b8;border-radius:99px;padding:9px 18px;font:500 14px Inter,sans-serif;cursor:pointer}
 .pw button:hover{background:#2d72b8}
+.vid{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 80px rgba(124,108,255,.18)}
+.vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.vid .snd{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 16px;font:500 13px Inter,sans-serif;cursor:pointer}
+.vid .snd:hover{background:rgba(124,108,255,.55)}
+.vid .snd svg{width:16px;height:16px}
+.rel.up{border-color:#1f3b63;background:linear-gradient(135deg,#0d1a2e,var(--surface))}
+.tag.soon2{background:rgba(79,209,255,.16);color:#8fe3ff}
 footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:14px;text-align:center}
 
 nav b.brand{display:flex;align-items:center;gap:10px}
@@ -228,15 +235,15 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
         <button class="ar r" id="nx" type="button" aria-label="Berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
 
         <div class="pg p-info on" data-t="Winnook">
-          <b>Winnook v1.4.6</b><span>Dirilis 20 Oktober 2026</span><small>Geser ke kanan untuk coba fiturnya</small>
+          <b>Winnook v1.4.6</b><span>Dirilis 17 Oktober 2026</span><small>Geser ke kanan untuk coba fiturnya</small>
         </div>
 
         <div class="pg p-mu" data-t="Musik">
-          <div class="mu1"><div class="art"><span class="sp"><svg viewBox="0 0 20 20"><path d="M5 7.6c3.6-1 7.4-.8 10.4 1M5.6 10.4c3.1-.9 6-.6 8.6.8M6.3 13c2.4-.7 4.6-.5 6.7.6" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span></div><div><b>Lunar - Acoustic</b><span>Tokoh Fiksi - Lunar (Acoustic)</span></div></div>
-          <div class="mu2"><span id="mc">00:09</span><div class="bar" id="mb"><i id="mf"></i></div><span id="mr">-02:05</span></div>
+          <div class="mu1"><div class="art"><span class="sp"><svg viewBox="0 0 20 20"><path d="M5 7.6c3.6-1 7.4-.8 10.4 1M5.6 10.4c3.1-.9 6-.6 8.6.8M6.3 13c2.4-.7 4.6-.5 6.7.6" stroke="#000" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span></div><div><b>Cinderella (feat. Ty Dolla $ign)</b><span>Mac Miller - The Divine Feminine</span></div></div>
+          <div class="mu2"><span id="mc">00:07</span><div class="bar" id="mb" role="slider" aria-label="Posisi lagu" tabindex="0"><i id="mf"></i></div><span id="mr">-07:53</span></div>
           <div class="mu3">
             <button class="ib" id="m0" type="button" aria-label="Ulangi lagu"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM9.5 12l8.5 6V6z"/></svg></button>
-            <button class="ib" id="mp" type="button" aria-label="Jeda"><svg viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+            <button class="ib" id="mp" type="button" aria-label="Putar"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></button>
             <button class="ib" id="m1" type="button" aria-label="Lagu berikutnya"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
           </div>
         </div>
@@ -292,6 +299,14 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
   <div class="cta"><a class="dl" id="dl" href="https://github.com/rmamln/Winnook-Dynamic-Island-Windows/releases/download/v1.4.6/Winnook-Setup.1.4.6.exe" download="Winnook-Setup.1.4.6.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Download Winnook v1.4.6</a></div>
 </header>
 
+<section id="demo">
+  <h2>Lihat Winnook beraksi</h2>
+  <div class="vid">
+    <video id="demoV" poster="poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Video demo Winnook"><source src="winnook-demo.mp4" type="video/mp4"><source src="winnook-demo.webm" type="video/webm"></video>
+    <button class="snd" id="snd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" id="sndi"><path d="M11 5L6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/></svg><span id="sndt">Nyalakan suara</span></button>
+  </div>
+</section>
+
 <section>
   <h2>Kecil di layar, lengkap isinya</h2>
   <div class="feat">
@@ -303,15 +318,28 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
 
 <section id="rilis">
   <h2>Riwayat rilis</h2>
-  <details class="rel" open>
-    <summary><strong>v1.4.6</strong><span class="tag">Terbaru</span><span>20 Oktober 2026</span></summary>
+  <details class="rel up" open>
+    <summary><strong>WinNook v1.4.7</strong><span class="tag soon2">Upcoming Update</span><span>Segera hadir</span></summary>
+    <ul>
+      <li><b>Perbaikan bug gambar</b> dan peningkatan stabilitas</li>
+      <li><b>Kustomisasi warna</b> dan mode transparan/solid</li>
+      <li><b>Timer</b> dengan durasi yang bisa diatur sendiri</li>
+      <li><b>Calendar</b> — fitur baru</li>
+      <li><b>System Monitor</b> (CPU, RAM, dan jaringan)</li>
+      <li><b>Weather Widget</b> (cuaca dan prakiraan)</li>
+      <li><b>Battery Care</b> (status dan persentase baterai)</li>
+      <li><b>Optimasi performa</b> agar tetap ringan dan hemat resource</li>
+    </ul>
+  </details>
+  <details class="rel">
+    <summary><strong>v1.4.6</strong><span class="tag">Terbaru</span><span>17 Oktober 2026</span></summary>
     <ul>
       <li><b>Perhalus</b> animasi dan tampilan</li>
       <li><b>Penambahan fitur</b> baru</li>
     </ul>
   </details>
   <details class="rel">
-    <summary><strong>v1.4.2</strong><span>19 Oktober 2026</span></summary>
+    <summary><strong>v1.4.2</strong><span>15 Oktober 2026</span></summary>
     <ul>
       <li><b>Perbaikan bug</b> dan peningkatan stabilitas</li>
       <li><b>Animasi notch</b> lebih halus</li>
@@ -351,7 +379,7 @@ function go(i){
   cur=Math.max(0,Math.min(pgs.length-1,i));
   pgs.forEach((p,k)=>p.classList.toggle('on',k===cur));
   [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));
-  ttl.innerHTML=pgs[cur].dataset.t;
+  ttl.innerHTML=pgs[cur].dataset.t;onMusicPage();
   $('#pv').hidden=cur===0;$('#nx').hidden=cur===pgs.length-1;
 }
 function setOpen(v){
@@ -377,14 +405,33 @@ function tick(){const d=new Date();
   $('#tt').textContent=d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}
 tick();setInterval(tick,15000);
 const mm=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
-/* musik */
-const LEN=134;let mt=9,mplay=true;
+/* musik — audio sungguhan (cinderella.mp3); kalau file belum ada, jalan mode simulasi */
 const PAUSE='<path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/>',PLAY='<path d="M7 4.5v15l12-7.5z"/>';
-function mu(){$('#mc').textContent=mm(mt);$('#mr').textContent='-'+mm(LEN-mt);$('#mf').style.width=(mt/LEN*100)+'%'}
-$('#mp').onclick=()=>{mplay=!mplay;$('#mp svg').innerHTML=mplay?PAUSE:PLAY;$('#mp').setAttribute('aria-label',mplay?'Jeda':'Putar')};
-$('#m0').onclick=$('#m1').onclick=()=>{mt=0;mu()};
-$('#mb').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();mt=Math.round((e.clientX-r.left)/r.width*LEN);mu()};
-setInterval(()=>{if(mplay&&isOpen){mt=mt>=LEN?0:mt+1;mu()}},1000);mu();
+const au=new Audio();au.preload='metadata';au.src='cinderella.mp3';
+var tried=false;let ok=false,sim=false,mt=7;const LEN=480;
+const mcur=()=>ok?au.currentTime:mt,mdur=()=>ok&&isFinite(au.duration)?au.duration:LEN,playing=()=>ok?!au.paused:sim;
+function mi(){const p=playing();$('#mp svg').innerHTML=p?PAUSE:PLAY;$('#mp').setAttribute('aria-label',p?'Jeda':'Putar')}
+function mu(){const L=Math.floor(mdur()),t=Math.min(L,Math.floor(mcur()));
+  $('#mc').textContent=mm(t);$('#mr').textContent='-'+mm(L-t);$('#mf').style.width=(t/L*100)+'%';
+  $('#mb').setAttribute('aria-valuenow',Math.round(t/L*100))}
+au.addEventListener('loadedmetadata',()=>{ok=true;mu();mi()});
+['play','pause','ended'].forEach(e=>au.addEventListener(e,mi));
+au.addEventListener('timeupdate',mu);
+function onMusicPage(){if(tried||!pgs[cur].classList.contains('p-mu'))return;tried=true;
+  if(ok)au.play().catch(()=>{});else sim=true;mi()}
+$('#mp').onclick=()=>{tried=true;if(ok){au.paused?au.play().catch(()=>{}):au.pause()}else{sim=!sim;mi()}};
+$('#m0').onclick=$('#m1').onclick=()=>{if(ok)au.currentTime=0;else mt=0;mu()};
+function seek(f){f=Math.max(0,Math.min(1,f));if(ok)au.currentTime=f*au.duration;else mt=Math.round(f*LEN);mu()}
+$('#mb').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();seek((e.clientX-r.left)/r.width)};
+$('#mb').onkeydown=e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();const d=e.key==='ArrowLeft'?-5:5;seek((mcur()+d)/mdur())}};
+setInterval(()=>{if(!ok&&sim){mt=mt>=LEN?0:mt+1;mu()}},1000);mu();mi();
+/* video demo */
+const dv=$('#demoV'),snd=$('#snd');
+dv.play&&dv.play().catch(()=>{});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)dv.play().catch(()=>{})});
+snd.onclick=()=>{dv.muted=!dv.muted;if(!dv.muted)dv.play().catch(()=>{});
+  snd.setAttribute('aria-pressed',String(!dv.muted));$('#sndt').textContent=dv.muted?'Nyalakan suara':'Matikan suara';
+  $('#sndi').innerHTML=dv.muted?'<path d="M11 5L6 9H3v6h3l5 4zM22 9l-6 6M16 9l6 6"/>':'<path d="M11 5L6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>'};
 /* pomodoro */
 let mode='f',rem=1500,run=false;
 const dur=()=>mode==='f'?1500:300;
