@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Winnook — Notch dinamis untuk Windows</title>
-<meta name="description" content="Winnook by Rama: notch dinamis bergaya Notchnook untuk Windows. Info rilis versi 1.5.1.">
-<link rel="icon" type="image/png" href="icon.png">
+<meta name="description" content="Winnook by Rama: notch dinamis bergaya Notchnook untuk Windows. Info rilis versi 1.6.1.">
+<link rel="icon" type="image/png" href="icon 1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#06070b;--surface:#0e1017;--line:#1c2030;--text:#eceef6;--muted:#8b91a8;--accent:#7c6cff;--accent2:#4fd1ff;color-scheme:dark}
+:root{--bg:#040a1c;--surface:#0a1530;--line:#1b2f5e;--text:#ffffff;--muted:#a3b6dc;--accent:#2f7bff;--accent2:#8fd8ff;color-scheme:dark}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font:400 16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(60rem 30rem at 50% -10%,rgba(124,108,255,.22),transparent 70%),radial-gradient(40rem 25rem at 90% 40%,rgba(79,209,255,.07),transparent 70%)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(60rem 32rem at 50% -12%,rgba(47,123,255,.38),transparent 70%),radial-gradient(40rem 26rem at 95% 38%,rgba(143,216,255,.14),transparent 70%),radial-gradient(34rem 22rem at 0% 85%,rgba(47,123,255,.16),transparent 70%)}
 a{color:inherit}
 .wrap{max-width:1000px;margin:0 auto;padding:0 24px;position:relative}
 h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
@@ -22,28 +22,30 @@ nav b{font:800 18px Sora,sans-serif}
 nav a.btn-s{font-size:14px;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:8px 16px;border-radius:99px}
 nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 /* notch */
-.screen{margin:18px auto 0;max-width:760px;height:340px;border:1px solid var(--line);border-radius:20px 20px 0 0;border-bottom:0;background:radial-gradient(280px 190px at 10% 72%,rgba(255,60,90,.38),transparent 70%),radial-gradient(320px 210px at 88% 58%,rgba(124,108,255,.42),transparent 70%),radial-gradient(260px 170px at 50% 98%,rgba(79,209,255,.26),transparent 70%),linear-gradient(180deg,#0b0d15,#07080d);position:relative;overflow:hidden}
+.screen{margin:18px auto 0;max-width:760px;height:340px;border:1px solid var(--line);border-radius:20px 20px 0 0;border-bottom:0;background:radial-gradient(280px 190px at 10% 72%,rgba(79,160,255,.42),transparent 70%),radial-gradient(320px 210px at 88% 58%,rgba(47,123,255,.5),transparent 70%),radial-gradient(260px 170px at 50% 98%,rgba(79,209,255,.26),transparent 70%),linear-gradient(180deg,#0a1634,#050c20);position:relative;overflow:hidden}
 .screen::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.notch{--ac:#3ee0a8;--gl:#2d72b8;--ga:.45;--s1:#1f2127;--s2:#2a2c33;--s3:#14161b;position:absolute;top:0;left:50%;transform:translateX(-50%);width:170px;height:46px;background:#000;border-radius:0 0 24px 24px;cursor:pointer;overflow:hidden;z-index:2;transition:width .5s cubic-bezier(.3,1.4,.5,1),height .5s cubic-bezier(.3,1.4,.5,1),border-radius .5s,background .35s;box-shadow:0 8px 50px rgba(45,114,184,.4)}
+.notch{--ac:#4fc3ff;--gl:#2d72b8;--ga:.45;--s1:#1f2127;--s2:#2a2c33;--s3:#14161b;position:absolute;top:0;left:50%;transform:translateX(-50%);width:196px;height:46px;background:#000;border-radius:0 0 24px 24px;cursor:pointer;overflow:hidden;z-index:2;transition:width .5s cubic-bezier(.3,1.4,.5,1),height .5s cubic-bezier(.3,1.4,.5,1),border-radius .5s,background .35s;box-shadow:0 8px 50px rgba(45,114,184,.4)}
 .notch::after{content:"";position:absolute;inset:auto 0 0;height:16px;background:linear-gradient(transparent,var(--gl));pointer-events:none}
 .notch.open{width:min(660px,calc(100% - 16px));height:248px;border-radius:0 0 36px 36px;cursor:default}
 .notch.glass.open{--s1:rgba(255,255,255,.14);--s2:rgba(255,255,255,.2);--s3:rgba(255,255,255,.1);background:rgba(26,14,22,var(--ga));-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 10px 40px rgba(0,0,0,.35)}
 .notch.glass.open::after{opacity:0}
-.eyewrap{position:absolute;top:9px;left:0;right:0;display:flex;justify-content:center;transition:opacity .2s}
+.eyewrap{position:absolute;top:15px;left:0;right:0;display:flex;justify-content:center;transition:opacity .2s}
 .notch.open .eyewrap{opacity:0;pointer-events:none}
-.eyes{display:flex;gap:22px;animation:look 7s infinite ease-in-out}
-.eyes i{width:10px;height:20px;background:#fff;border-radius:50%;animation:blink 4.2s infinite;transform-origin:center}
-.eyes i:nth-child(2){animation-delay:.04s}
-@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.eyes{display:flex;gap:28px;animation:look 7s infinite ease-in-out}
+.eyes i{width:19px;height:10px;border:3.5px solid #fff;border-bottom:0;border-radius:19px 19px 0 0;background:none;animation:happy 5s infinite ease-in-out;transform-origin:50% 100%}
+.eyes i:nth-child(2){animation-delay:.03s}
+@keyframes happy{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.35)}}
 @keyframes look{0%,35%,100%{transform:translateX(0)}42%,58%{transform:translateX(-8px)}66%,82%{transform:translateX(8px)}}
 @keyframes pgin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 /* mini (musik diputar) */
-.mini{position:absolute;top:0;left:0;right:0;height:46px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 14px 5px;opacity:0;pointer-events:none;transition:opacity .25s;color:#fff}
-.notch.mp:not(.open){width:216px}
+.mini{position:absolute;top:0;left:0;right:0;height:46px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 16px 7px;opacity:0;pointer-events:none;transition:opacity .25s;color:#fff}
+.notch.mp:not(.open){width:236px}
+.notch.mp:not(.open)::after{inset:auto 18px 5px;height:2.5px;border-radius:3px;background:linear-gradient(90deg,#ffd24a calc(var(--p,0)*1%),rgba(255,210,74,.28) 0)}
 .notch.mp:not(.open) .eyewrap{opacity:0;pointer-events:none}
 .notch.mp:not(.open) .mini{opacity:1;transition-delay:.15s}
 .mini .art{width:30px;height:30px;border-radius:7px;justify-self:start}
-.mini .sp{width:15px;height:15px;left:auto;right:-5px;bottom:-5px;border-width:1.5px}
+.mini .sp{width:15px;height:15px;left:auto;right:-6px;bottom:-5px;border-width:1.5px}
+.mini .art{background:radial-gradient(circle at 50% 42%,#f4f4f4 0 5px,#8a8a8a 7px,#2a2a2e 20px,#0d0d10)}
 .mini b{font:600 16px Sora,sans-serif;font-variant-numeric:tabular-nums}
 .mini .pr{justify-self:end;position:relative;width:26px;height:26px;border-radius:50%;background:conic-gradient(#ffd24a calc(var(--p,0)*1%),#2c2f36 0);display:grid;place-items:center}
 .mini .pr::before{content:"";position:absolute;inset:3px;border-radius:50%;background:#000}
@@ -59,7 +61,7 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .dt b{font-weight:600}
 .cl{justify-self:end;width:26px;height:26px;border-radius:50%;border:3px solid var(--s2);background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
 .cl::before{content:"";width:8px;height:9px;border-left:2.5px solid #ddd;border-right:2.5px solid #ddd}
-.cl:hover{border-color:#7c6cff}
+.cl:hover{border-color:#2f7bff}
 .bd{position:relative;display:flex;align-items:center;min-height:0}
 .pg{display:none;width:100%;padding:0 22px;min-width:0}
 .pg.on{display:flex;animation:pgin .25s}
@@ -88,10 +90,10 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .p-mu{gap:22px;align-items:center}
 .mu-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px}
 .mu1{display:flex;align-items:center;gap:14px}
-.art{position:relative;flex:none;width:62px;height:62px;border-radius:12px;background:radial-gradient(circle at 58% 38%,#f1f1f1 0 9px,#8a8a8a 11px,#2a2a2e 34px,#0d0d10)}
-.sp{position:absolute;left:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:#1ed760;border:2px solid #000}
+.art{position:relative;flex:none;width:80px;height:80px;border-radius:14px;background:radial-gradient(circle at 58% 38%,#f1f1f1 0 9px,#8a8a8a 11px,#2a2a2e 34px,#0d0d10)}
+.sp{position:absolute;left:-8px;bottom:-8px;width:26px;height:26px;border-radius:50%;background:#1ed760;border:2px solid #000}
 .sp svg{width:100%;height:100%}
-.mu1>div:last-child{min-width:0}.mu1 b{display:block;font:600 17px Sora,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mu1 span{font-size:13px;color:#9aa0b4;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mu1>div:last-child{min-width:0}.mu1 b{display:block;font:600 20px Sora,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mu1 span{font-size:13px;color:#9aa0b4;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mu2{display:flex;align-items:center;gap:12px;font-size:12px;color:#c3c7d6;font-variant-numeric:tabular-nums}
 .bar{flex:1;height:6px;border-radius:9px;background:var(--s2);cursor:pointer;position:relative}
 .bar i{position:absolute;inset:0 auto 0 0;width:0;border-radius:9px;background:#d5d8e4}
@@ -103,6 +105,15 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .ib.ly[aria-pressed=true]{color:#4fc3ff}
 .lyr{display:none;flex:0 0 42%;min-width:0;flex-direction:column;gap:6px;border-left:1px solid rgba(255,255,255,.1);padding-left:20px}
 .p-mu.showly .lyr{display:flex}
+.mu-wk{flex:none;width:200px;border-left:1px solid rgba(255,255,255,.12);padding-left:22px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.p-mu.showly .mu-wk{display:none}
+.mu-wk>b{font:500 13px Inter,sans-serif;color:#9aa0b4}
+.wkg{display:grid;grid-template-columns:repeat(7,1fr);row-gap:3px;text-align:center;font:700 13px/18px Inter,sans-serif;font-variant-numeric:tabular-nums}
+.wkg .h{font-weight:500;font-size:11px;color:#9aa0b4}
+.wkg .t{color:#4fc3ff}
+.wkg .hn{position:relative}.wkg .hn::after{content:"";position:absolute;left:50%;bottom:-3px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ac)}
+.mu-wk>p{font-size:12.5px;color:#9aa0b4;margin-top:4px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mu-wk>p.has{color:#e5e7ef}
 .lyr p{font:600 14px Inter,sans-serif;color:#fff;opacity:.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .3s}
 .lyr p.on{opacity:1;font-weight:700}.lyr p.n{opacity:.6}
 .p-mu.showly .mu1 b{font-size:15px}
@@ -137,7 +148,7 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .yl{display:flex;flex-direction:column;justify-content:space-between;height:86px;font-size:10px;color:#9aa0b4;text-align:right}
 /* shelf */
 .zone{width:100%;height:112px;border:2px dashed rgba(150,155,175,.5);border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;text-align:center;padding:0 16px;transition:border-color .2s,background .2s}
-.zone:hover,.zone.drag{border-color:#7c6cff;background:rgba(124,108,255,.1)}
+.zone:hover,.zone.drag{border-color:#2f7bff;background:rgba(47,123,255,.1)}
 .zone svg{width:30px;height:30px;color:#bfc3d2;margin-bottom:2px}
 .zone b{font:600 17px Sora,sans-serif}.zone span{font-size:12px;color:#9aa0b4;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* todo */
@@ -157,7 +168,7 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .tk .x{margin-left:auto;color:#ff6b7a;display:none;font-style:normal}.editing .tk .x{display:block}
 /* kalender */
 .p-ca{gap:26px;align-items:center}
-.ca-l{flex:none;width:176px;display:flex;flex-direction:column;gap:8px}
+.ca-l{flex:none;width:176px;display:flex;flex-direction:column;gap:6px}
 .ca-d{display:flex;align-items:baseline;gap:10px}
 .ca-d big{font:800 46px Sora,sans-serif;line-height:1}.ca-d span{font-size:14px;color:#9aa0b4}
 .ca-n{display:flex;align-items:center;gap:6px;justify-content:space-between}
@@ -168,6 +179,20 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .ca-g .h{font-weight:500;font-size:11px;color:#9aa0b4}
 .ca-g .sun{color:#ff6b7a}
 .ca-g .now{background:#4fc3ff;color:#000;border-radius:99px;margin:0 2px}
+.ca-g .c{position:relative;cursor:pointer;border-radius:99px;margin:0 2px;transition:background .15s}
+.ca-g .c:hover{background:rgba(255,255,255,.14)}.ca-g .now:hover{background:#7ad3ff}
+.ca-g .sel:not(.now){background:rgba(255,255,255,.2);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.ca-g .hn::after{content:"";position:absolute;left:50%;bottom:1px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--ac)}
+.ca-g .now.hn::after{background:#000}
+.ca-d{cursor:pointer}
+.ca-f{display:flex;align-items:center;gap:6px}
+.ca-f input{flex:1;min-width:0;background:var(--s3);border:1px solid rgba(255,255,255,.18);border-radius:99px;color:#fff;padding:9px 14px;font:400 13px Inter,sans-serif;height:38px}
+.ca-f input[hidden],.ca-f[hidden],.ca-l .pill[hidden]{display:none}
+.ca-nl{display:flex;flex-direction:column;gap:2px;max-height:32px;overflow:hidden}
+.ca-nl:empty{display:none}
+.cn{display:flex;align-items:center;gap:6px;font-size:11.5px;line-height:15px;color:#cfd3e2;min-width:0}
+.cn span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cn button{flex:none;background:none;border:0;color:#ff6b7a;cursor:pointer;padding:0 2px;font-size:14px;line-height:1}
 /* cuaca */
 .p-wx{gap:16px;align-items:center}
 .wx1{flex:none;width:200px;min-width:0}
@@ -216,12 +241,12 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
  .p-po{justify-content:center}.pring{display:none}
  .po-t b{font-size:36px}.po-t{gap:8px}.po-b{gap:6px}.go{width:42px}.po-b .pill{padding:8px 10px;font-size:11.5px}.po-b .pill svg{display:none}
  .wch{display:none}.w1 big{font-size:34px}
- .mu1 b{font-size:15px}.mu1 span{font-size:12px}.mu3{gap:26px}
+ .mu1 b{font-size:15px}.mu1 span{font-size:12px}.mu3{gap:26px}.mu-wk{display:none}.art{width:62px;height:62px}.sp{width:22px;height:22px;left:-6px;bottom:-6px}
  .p-mu.showly .mu1{display:none}.p-mu.showly{flex-direction:column-reverse;gap:8px}.p-mu.showly .lyr{border:0;padding:0;flex:none;width:100%}.p-mu.showly .mu-main{width:100%}
  .zone{height:100px}.zone b{font-size:15px}
  .p-td{flex-wrap:wrap;gap:6px;align-content:center}.td1{width:100%}.td1 big{font-size:32px}.td1 p{margin:0 0 8px}
  .td2{width:100%;flex:none;max-height:54px}.td2 .none{margin:0;text-align:left}
- .p-ca{flex-direction:column;gap:6px;align-items:stretch}.ca-l{width:100%;flex-direction:row;align-items:center;gap:8px}.ca-d{display:none}.ca-n{flex:1}.ca-l .pill{padding:7px 12px;font-size:12px}
+ .p-ca{flex-direction:column;gap:6px;align-items:stretch}.ca-l{width:100%;flex-direction:row;align-items:center;gap:8px}.ca-d{display:none}.ca-n{flex:1}.ca-nl{display:none}.ca-f input{height:32px;padding:6px 12px;width:100px}.ca-l .pill{padding:7px 12px;font-size:12px}
  .ca-g{grid-auto-rows:18px;font-size:11.5px;line-height:18px}
  .p-wx{flex-direction:column;gap:8px;align-items:stretch}.wx1{width:100%;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}.wxl{grid-column:1/-1;margin-bottom:2px}.wxt .wi,.wxt b{font-size:32px}.wxk{margin:0;font-size:15px}.wxd{display:none}
  .wxf{gap:5px;flex:none}.fc{padding:5px 0;font-size:10px}.fc .ic{font-size:17px}.fc b{font-size:12.5px}.fc em{font-size:11px}.fc u{font-size:9.5px}
@@ -240,7 +265,7 @@ nav a.btn-s:hover{color:var(--text);border-color:var(--accent)}
 .sws button[aria-pressed=true]{border-color:#fff;box-shadow:0 0 0 2px var(--bg) inset}
 .ctl button:focus-visible,.ctl input:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .hint{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
-.badge{display:inline-block;border:1px solid #2a2650;background:#14122b;color:#c9c2ff;font:600 15px Sora,sans-serif;padding:12px 22px;border-radius:99px}
+.badge{display:inline-block;border:1px solid #1f4390;background:#0c1c46;color:#dcebff;font:600 15px Sora,sans-serif;padding:12px 22px;border-radius:99px}
 /* hero */
 .hero{text-align:center;padding:56px 0 40px}
 .hero h1{font-size:clamp(40px,8vw,84px);font-weight:800;max-width:14ch;margin:0 auto}
@@ -253,15 +278,15 @@ h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
 .card h3{font-size:18px;margin-bottom:8px}
 .card p{color:var(--muted);font-size:15px}
-.card:first-child{grid-column:1/-1;background:linear-gradient(135deg,#14122b,var(--surface));border-color:#2a2650}
+.card:first-child{grid-column:1/-1;background:linear-gradient(135deg,#0c1c46,var(--surface));border-color:#1f4390}
 /* releases */
 .rel{border:1px solid var(--line);border-radius:16px;background:var(--surface);margin-bottom:12px;overflow:hidden}
 .rel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:20px 24px;flex-wrap:wrap}
 .rel summary::-webkit-details-marker{display:none}
 .rel summary strong{font:600 18px Sora,sans-serif}
 .rel summary span{color:var(--muted);font-size:14px;margin-left:auto}
-.tag{font-size:12px;padding:3px 10px;border-radius:99px;background:rgba(124,108,255,.18);color:#b9b0ff}
-.rel.up{border-color:#1f3b63;background:linear-gradient(135deg,#0d1a2e,var(--surface))}
+.tag{font-size:12px;padding:3px 10px;border-radius:99px;background:rgba(47,123,255,.18);color:#cfe6ff}
+.rel.up{border-color:#24509f;background:linear-gradient(135deg,#0b1d46,var(--surface))}
 .rel[open] summary{border-bottom:1px solid var(--line)}
 .rel ul{padding:20px 24px 24px 44px;color:var(--muted)}
 .rel li{margin-bottom:6px}
@@ -270,7 +295,7 @@ h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
 .spec div{background:var(--surface);padding:18px 22px}
 .spec small{color:var(--muted);display:block;font-size:13px}
 .spec b{font:600 17px Sora,sans-serif}
-.pw{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#0d1a2e,var(--surface));border:1px solid #1f3b63;border-radius:18px;padding:22px 26px;margin-bottom:16px}
+.pw{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(135deg,#0b1d46,var(--surface));border:1px solid #24509f;border-radius:18px;padding:22px 26px;margin-bottom:16px}
 .pw small{color:var(--muted);display:block;font-size:13px}
 .pw code{font:600 22px Sora,sans-serif;color:#9fd0ff;letter-spacing:.02em}
 .pw button{margin-left:auto;background:transparent;color:var(--text);border:1px solid #2d72b8;border-radius:99px;padding:9px 18px;font:500 14px Inter,sans-serif;cursor:pointer}
@@ -280,15 +305,15 @@ footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);f
 nav b.brand{display:flex;align-items:center;gap:10px}
 .logo{display:block;width:min(420px,80%);height:auto;margin:0 auto 26px;border-radius:18px}
 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.dl{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06070b;font:600 16px Sora,sans-serif;text-decoration:none;padding:14px 28px;border-radius:99px;box-shadow:0 10px 40px rgba(124,108,255,.35);transition:transform .2s}
+.dl{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#2f7bff,#6cc6ff);color:#fff;font:600 16px Sora,sans-serif;text-decoration:none;padding:14px 28px;border-radius:99px;box-shadow:0 10px 40px rgba(47,123,255,.5);transition:transform .2s}
 .dl:hover{transform:translateY(-2px)}
 .dl svg{width:18px;height:18px}
 .soon{background:rgba(79,209,255,.16)!important;color:#8fe3ff!important}
 /* video + coming soon */
-.vid{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 70px rgba(124,108,255,.18)}
+.vid{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 70px rgba(47,123,255,.18)}
 .vid video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
 .snd{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(10,12,18,.72);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:9px 16px;font:600 13px Inter,sans-serif;cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:background .2s,border-color .2s}
-.snd:hover{background:rgba(124,108,255,.35);border-color:var(--accent)}
+.snd:hover{background:rgba(47,123,255,.35);border-color:var(--accent)}
 .snd svg{width:15px;height:15px;flex:none}
 .snd:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 @media(max-width:560px){.snd{right:8px;bottom:8px;padding:7px 12px;font-size:12px}}
@@ -299,7 +324,7 @@ nav b.brand{display:flex;align-items:center;gap:10px}
 .fsb svg{width:16px;height:16px}
 .fsb:focus-visible,.fsx:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .desk,.fsx{display:none}
-.screen.fs{position:fixed;inset:0;z-index:200;width:auto;max-width:none;height:auto;margin:0;border:0;border-radius:0;background:radial-gradient(40vw 40vh at 12% 78%,rgba(255,60,90,.38),transparent 70%),radial-gradient(46vw 46vh at 88% 55%,rgba(124,108,255,.45),transparent 70%),radial-gradient(40vw 34vh at 50% 100%,rgba(79,209,255,.28),transparent 70%),linear-gradient(180deg,#0b0d15,#07080d)}
+.screen.fs{position:fixed;inset:0;z-index:200;width:auto;max-width:none;height:auto;margin:0;border:0;border-radius:0;background:radial-gradient(40vw 40vh at 12% 78%,rgba(79,160,255,.42),transparent 70%),radial-gradient(46vw 46vh at 88% 55%,rgba(47,123,255,.52),transparent 70%),radial-gradient(40vw 34vh at 50% 100%,rgba(79,209,255,.28),transparent 70%),linear-gradient(180deg,#0a1634,#050c20)}
 .screen.fs::after{display:none}
 .screen.fs .desk{display:block;position:absolute;inset:0;pointer-events:none;z-index:0}
 .screen.fs .fsx{display:inline-flex;align-items:center;gap:6px;position:absolute;top:14px;right:14px;z-index:3;background:rgba(10,12,18,.7);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:8px 14px;font:600 13px Inter,sans-serif;cursor:pointer;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
@@ -315,7 +340,7 @@ nav b.brand{display:flex;align-items:center;gap:10px}
 .tbar .tl i{display:block;width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.1)}
 .tbar .tl i.st{background:linear-gradient(#4fc3ff,#4fc3ff) 0 0/46% 46% no-repeat,linear-gradient(#4fc3ff,#4fc3ff) 100% 0/46% 46% no-repeat,linear-gradient(#4fc3ff,#4fc3ff) 0 100%/46% 46% no-repeat,linear-gradient(#4fc3ff,#4fc3ff) 100% 100%/46% 46% no-repeat;background-origin:content-box;background-clip:content-box;padding:6px}
 .tbar .tl i.se{width:120px;border-radius:99px}
-.tbar .tl i.c1{background:#7c6cff}.tbar .tl i.c2{background:#ffb040}.tbar .tl i.c3{background:#3ee0a8}
+.tbar .tl i.c1{background:#2f7bff}.tbar .tl i.c2{background:#8fd8ff}.tbar .tl i.c3{background:#ffffff}
 .tbar .tr{position:absolute;right:16px;text-align:right;font-size:12px;line-height:1.3;color:#9aa0b4}
 .tbar .tr b{display:block;color:#eceef6;font-weight:600}
 html.fsmode{overflow:hidden}
@@ -325,16 +350,16 @@ html.fsmode .ctl{position:fixed;left:50%;bottom:62px;transform:translateX(-50%);
 @media(min-width:1400px) and (min-height:820px){.screen.fs .notch{transform:translateX(-50%) scale(1.5)}}
 @media(max-width:560px){html.fsmode .ctl{bottom:56px;gap:10px 16px;padding:10px 12px}.tbar .tl i.se{width:70px}.tbar .tl i.c3{display:none}.tbar .tr{display:none}.screen.fs .fsx{top:auto;bottom:9px;right:10px;padding:7px 12px}}
 /* donasi */
-.donate{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:linear-gradient(135deg,#2a1a0a,var(--surface));border:1px solid #5a3a14;border-radius:20px;padding:28px 30px}
-.donate .cup{flex:none;width:56px;height:56px;border-radius:16px;background:rgba(255,176,64,.14);display:grid;place-items:center;color:#ffb040}
+.donate{display:flex;align-items:center;gap:22px;flex-wrap:wrap;background:linear-gradient(135deg,#0c1c46,var(--surface));border:1px solid #24509f;border-radius:20px;padding:28px 30px}
+.donate .cup{flex:none;width:56px;height:56px;border-radius:16px;background:rgba(143,216,255,.14);display:grid;place-items:center;color:#8fd8ff}
 .donate .cup svg{width:30px;height:30px}
 .donate div.t{flex:1;min-width:220px}
 .donate h3{font-size:20px;margin-bottom:6px}
 .donate p{color:var(--muted);font-size:15px}
-.sw-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#ffb040,#ff7a45);color:#1a0f03;font:600 15px Sora,sans-serif;text-decoration:none;padding:13px 24px;border-radius:99px;box-shadow:0 8px 30px rgba(255,140,60,.28);transition:transform .2s}
+.sw-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(90deg,#ffffff,#cfe6ff);color:#06183f;font:600 15px Sora,sans-serif;text-decoration:none;padding:13px 24px;border-radius:99px;box-shadow:0 8px 30px rgba(143,216,255,.3);transition:transform .2s}
 .sw-btn:hover{transform:translateY(-2px)}
 .sw-btn:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
-footer a{color:#ffb040;text-decoration:none}footer a:hover{text-decoration:underline}
+footer a{color:#8fd8ff;text-decoration:none}footer a:hover{text-decoration:underline}
 /* cara pasang + faq */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .st{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
@@ -361,7 +386,7 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
 </head>
 <body>
 <div class="wrap">
-<nav><b class="brand"><img src="icon.png" alt="" width="34" height="22">Winnook</b><a class="btn-s" href="#rilis">Riwayat rilis</a></nav>
+<nav><b class="brand"><img src="icon 1.png" alt="" width="34" height="22">Winnook</b><a class="btn-s" href="#rilis">Riwayat rilis</a></nav>
 
 <div class="screen">
   <div class="notch" id="notch">
@@ -378,7 +403,7 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
         <button class="ar r" id="nx" type="button" aria-label="Berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
 
         <div class="pg p-info on" data-t="Winnook" data-k="info">
-          <b>Winnook v1.5.1</b><small>Geser ke kanan untuk coba fiturnya. Kalender, Cuaca, System Monitor, dan Battery Care adalah pratinjau v1.5.0.</small>
+          <b>Winnook v1.6.1</b><small>Geser ke kanan untuk coba fiturnya. Kalender, Cuaca, System Monitor, dan Battery Care adalah pratinjau v1.5.0.</small>
         </div>
 
         <div class="pg p-mu" data-t="Musik" data-k="mu" id="pmu">
@@ -393,6 +418,7 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
             </div>
           </div>
           <div class="lyr" id="ly" aria-live="off"></div>
+          <div class="mu-wk" id="mwk"><b id="mwm"></b><div class="wkg" id="wkg"></div><p id="wkn">Tidak ada catatan hari ini</p></div>
         </div>
 
         <div class="pg p-po" data-t="Pomodoro" data-k="po">
@@ -436,7 +462,9 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
           <div class="ca-l">
             <div class="ca-d"><big id="cd">21</big><span id="cw">Rabu</span></div>
             <div class="ca-n"><button class="rb" id="cp" type="button" aria-label="Bulan sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><b id="cm">Oktober 2026</b><button class="rb" id="cn" type="button" aria-label="Bulan berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
-            <button class="pill" id="ct" type="button">Hari ini</button>
+            <button class="pill" id="ct" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Catatan</button>
+            <form class="ca-f" id="cf" hidden><input id="ci" type="text" maxlength="60" placeholder="Tulis catatan…" aria-label="Isi catatan" autocomplete="off"><button class="rb" type="submit" aria-label="Simpan catatan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></button></form>
+            <div class="ca-nl" id="cnl"></div>
           </div>
           <div class="ca-g" id="cg"></div>
         </div>
@@ -482,17 +510,17 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
 <div class="ctl">
   <div class="cg"><span>Tampilan</span><div class="seg" role="group" aria-label="Mode tampilan"><button type="button" data-m="solid" aria-pressed="true">Solid</button><button type="button" data-m="glass" aria-pressed="false">Transparan</button></div></div>
   <label class="cg"><span>Transparansi</span><input type="range" id="alr" min="15" max="85" value="55" disabled aria-label="Tingkat transparansi"></label>
-  <div class="cg"><span>Warna</span><div class="sws" role="group" aria-label="Warna aksen"><button type="button" data-ac="#3ee0a8" data-gl="#2d72b8" aria-pressed="true" aria-label="Warna Bawaan" style="background:#3ee0a8"></button><button type="button" data-ac="#4fc3ff" data-gl="#1d6fd6" aria-pressed="false" aria-label="Warna Biru" style="background:#4fc3ff"></button><button type="button" data-ac="#a78bfa" data-gl="#6d4fe0" aria-pressed="false" aria-label="Warna Ungu" style="background:#a78bfa"></button><button type="button" data-ac="#ff6fae" data-gl="#d6336c" aria-pressed="false" aria-label="Warna Pink" style="background:#ff6fae"></button><button type="button" data-ac="#ffb040" data-gl="#e8742a" aria-pressed="false" aria-label="Warna Oranye" style="background:#ffb040"></button></div></div>
+  <div class="cg"><span>Warna</span><div class="sws" role="group" aria-label="Warna aksen"><button type="button" data-ac="#4fc3ff" data-gl="#2d72b8" aria-pressed="true" aria-label="Warna Bawaan" style="background:#4fc3ff"></button><button type="button" data-ac="#ffffff" data-gl="#8fb4ff" aria-pressed="false" aria-label="Warna Putih" style="background:#ffffff"></button><button type="button" data-ac="#2f7bff" data-gl="#1d4fd6" aria-pressed="false" aria-label="Warna Biru Tua" style="background:#2f7bff"></button><button type="button" data-ac="#9bd8ff" data-gl="#3a8bd6" aria-pressed="false" aria-label="Warna Biru Langit" style="background:#9bd8ff"></button><button type="button" data-ac="#7aa2ff" data-gl="#3b4fd6" aria-pressed="false" aria-label="Warna Biru Indigo" style="background:#7aa2ff"></button></div></div>
 </div>
 
 <div class="fsrow"><button class="fsb" id="fsb" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Coba layar penuh</button></div>
 
 <header class="hero">
-  <div class="logo-stage" id="logoS" title="Klik untuk putar ulang"><video class="logo-vid" id="logoV" autoplay muted playsinline preload="auto" aria-hidden="true"><source src="winnook-logo-intro.mp4" type="video/mp4"></video><img class="logo-final" src="logo.png" alt="Winnook — Notch dinamis untuk Windows" width="1052" height="270"></div>
+  <div class="logo-stage" id="logoS" title="Klik untuk putar ulang"><video class="logo-vid" id="logoV" autoplay muted playsinline preload="auto" aria-hidden="true"><source src="hero.mp4" type="video/mp4"></video><img class="logo-final" src="logo.png" alt="Winnook — Notch dinamis untuk Windows" width="1052" height="270"></div>
   <h1>Notch dinamis untuk <span class="grad">Windows</span></h1>
   <p>Winnook mengubah bagian atas layar jadi pusat kontrol kecil yang muncul saat dibutuhkan. Ini halaman info rilis versi terbaru.</p>
-  <span class="badge">Versi 1.5.1 · Rilis 22 Oktober 2026</span>
-  <div class="cta"><a class="dl" id="dl" href="https://github.com/rmamln/Winnook-Dynamic-Island-Windows/releases/download/v1.5.1/Winnook-Setup.1.5.1.exe" download="Winnook-Setup.1.5.1.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Download Winnook v1.5.1</a></div>
+  <span class="badge">Versi 1.6.1 · Rilis 26 Oktober 2026</span>
+  <div class="cta"><a class="dl" id="dl" href="https://github.com/rmamln/Winnook-Dynamic-Island-Windows/releases/download/v1.6.1/Winnook-Setup.1.6.1.exe" download="Winnook-Setup.1.6.1.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Download Winnook v1.6.1</a></div>
 </header>
 
 <section>
@@ -515,7 +543,21 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
 <section id="rilis">
   <h2>Riwayat rilis</h2>
   <details class="rel up" open>
-    <summary><strong>WinNook v1.5.1</strong><span class="tag soon">Terbaru</span><span>22 Oktober 2026</span></summary>
+    <summary><strong>WinNook v1.6.1</strong><span class="tag soon">Terbaru</span><span>26 Oktober 2026</span></summary>
+    <ul>
+      <li><b>Optimasi RAM</b> dan pengurangan proses latar belakang</li>
+      <li><b>Helper .NET</b> untuk menggantikan PowerShell yang berjalan terus-menerus</li>
+      <li><b>Adaptive RAM Cleanup</b> untuk pembersihan memori otomatis</li>
+      <li><b>Music Player Baru</b> dengan cover besar, informasi lagu, dan kontrol minimalis</li>
+      <li><b>Lyrics Optimization</b> agar lirik hanya dimuat saat dibuka</li>
+      <li><b>Weekly Calendar</b> dengan akses kalender melalui strip mingguan</li>
+      <li><b>Senyum Eyes</b> sebagai satu-satunya desain mata</li>
+      <li><b>Bluetooth Detection</b> dengan pemeriksaan yang lebih efisien</li>
+      <li><b>Perbaikan bug</b> dan peningkatan stabilitas sistem</li>
+    </ul>
+  </details>
+  <details class="rel">
+    <summary><strong>WinNook v1.5.1</strong><span>22 Oktober 2026</span></summary>
     <ul>
       <li><b>Perbaikan bug gambar</b> dan peningkatan stabilitas</li>
       <li><b>Kustomisasi warna</b> dan mode transparan/solid</li>
@@ -552,7 +594,7 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
 <section id="pasang">
   <h2>Cara pasang</h2>
   <div class="steps">
-    <div class="st"><i>1</i><h3>Unduh installer</h3><p>Klik tombol <b>Download</b> di bagian atas, atau <a href="https://github.com/rmamln/Winnook-Dynamic-Island-Windows/releases/download/v1.5.1/Winnook-Setup.1.5.1.exe">unduh langsung</a>. Ukuran file sekitar 70.5 MB.</p></div>
+    <div class="st"><i>1</i><h3>Unduh installer</h3><p>Klik tombol <b>Download</b> di bagian atas, atau <a href="https://github.com/rmamln/Winnook-Dynamic-Island-Windows/releases/download/v1.6.1/Winnook-Setup.1.6.1.exe">unduh langsung</a>. Ukuran file sekitar 70.5 MB.</p></div>
     <div class="st"><i>2</i><h3>Jalankan dan instal</h3><p>Buka file <b>Winnook-Setup</b> di folder Downloads lalu ikuti petunjuk instalasi. Kalau Windows menampilkan peringatan, klik <b>More info</b> lalu <b>Run anyway</b>.</p></div>
     <div class="st"><i>3</i><h3>Mulai pakai</h3><p>Jalankan Winnook. Notch akan muncul di bagian atas layar dan siap dipakai.</p></div>
   </div>
@@ -570,7 +612,7 @@ a:focus-visible,summary:focus-visible,.notch:focus-visible{outline:2px solid var
   <h2>Detail file</h2>
   <div class="spec">
     <div><small>Nama produk</small><b>Winnook</b></div>
-    <div><small>Versi</small><b>1.5.1</b></div>
+    <div><small>Versi</small><b>1.6.1</b></div>
     <div><small>Ukuran</small><b>72 MB</b></div>
     <div><small>Tipe</small><b>Aplikasi (.exe)</b></div>
     <div><small>Bahasa</small><b>English (US)</b></div>
@@ -742,20 +784,43 @@ ti.onkeydown=e=>{if(e.key==='Enter'&&ti.value.trim()){tasks.push({t:ti.value.tri
 td();
 /* kalender */
 const MN=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'],DN=['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-let cy,cmn;
-function calReset(){const t=new Date();cy=t.getFullYear();cmn=t.getMonth()}
+let cy,cmn,sel;
+const nk=(y,m,d)=>y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+let NOTES={};try{NOTES=JSON.parse(store.get('notes','{}'))||{}}catch(e){NOTES={}}
+const saveNotes=()=>store.set('notes',JSON.stringify(NOTES));
+function calReset(){const t=new Date();cy=t.getFullYear();cmn=t.getMonth();sel={y:cy,m:cmn,d:t.getDate()}}
 function cal(){
-  const t=new Date();$('#cd').textContent=t.getDate();$('#cw').textContent=DN[t.getDay()];$('#cm').textContent=MN[cmn]+' '+cy;
+  const t=new Date(),sd=new Date(sel.y,sel.m,sel.d);$('#cd').textContent=sd.getDate();$('#cw').textContent=DN[sd.getDay()];$('#cm').textContent=MN[cmn]+' '+cy;
   const off=(new Date(cy,cmn,1).getDay()+6)%7,days=new Date(cy,cmn+1,0).getDate();
   let h=['Sen','Sel','Rab','Kam','Jum','Sab','Min'].map(d=>'<span class="h">'+d+'</span>').join('');
   for(let i=0;i<off;i++)h+='<span></span>';
-  for(let d=1;d<=days;d++){const dow=(off+d-1)%7,now=d===t.getDate()&&cmn===t.getMonth()&&cy===t.getFullYear();
-    h+='<span class="'+(dow===6?'sun ':'')+(now?'now':'')+'">'+d+'</span>'}
-  $('#cg').innerHTML=h}
-$('#cp').onclick=()=>{cmn--;if(cmn<0){cmn=11;cy--}cal()};
-$('#cn').onclick=()=>{cmn++;if(cmn>11){cmn=0;cy++}cal()};
-$('#ct').onclick=()=>{calReset();cal()};
-calReset();cal();onPage.ca=()=>{calReset();cal()};
+  for(let d=1;d<=days;d++){const dow=(off+d-1)%7,now=d===t.getDate()&&cmn===t.getMonth()&&cy===t.getFullYear(),isSel=sel.y===cy&&sel.m===cmn&&sel.d===d,hn=(NOTES[nk(cy,cmn,d)]||[]).length>0;
+    h+='<span class="c '+(dow===6?'sun ':'')+(now?'now ':'')+(isSel?'sel ':'')+(hn?'hn':'')+'" data-d="'+d+'">'+d+'</span>'}
+  $('#cg').innerHTML=h;notesList();wk()}
+function notesList(){
+  const arr=NOTES[nk(sel.y,sel.m,sel.d)]||[],box=$('#cnl');box.innerHTML='';
+  arr.forEach((t,i)=>{const r=document.createElement('div');r.className='cn';const sp=document.createElement('span');sp.textContent='• '+t;sp.title=t;
+    const b=document.createElement('button');b.type='button';b.textContent='×';b.setAttribute('aria-label','Hapus catatan');b.onclick=()=>{arr.splice(i,1);if(!arr.length)delete NOTES[nk(sel.y,sel.m,sel.d)];saveNotes();cal()};
+    r.append(sp,b);box.appendChild(r)})}
+function wk(){
+  const t=new Date(),mon=new Date(t.getFullYear(),t.getMonth(),t.getDate()-((t.getDay()+6)%7));
+  $('#mwm').textContent=MN[t.getMonth()]+' '+t.getFullYear();
+  let h=['S','S','R','K','J','S','M'].map(d=>'<span class="h">'+d+'</span>').join('');
+  for(let i=0;i<7;i++){const d=new Date(mon.getFullYear(),mon.getMonth(),mon.getDate()+i),hn=(NOTES[nk(d.getFullYear(),d.getMonth(),d.getDate())]||[]).length>0;
+    h+='<span class="'+(d.toDateString()===t.toDateString()?'t ':'')+(hn?'hn':'')+'">'+d.getDate()+'</span>'}
+  $('#wkg').innerHTML=h;
+  const tn=NOTES[nk(t.getFullYear(),t.getMonth(),t.getDate())]||[],p=$('#wkn');
+  p.textContent=tn.length?tn.join(' · '):'Tidak ada catatan hari ini';p.classList.toggle('has',tn.length>0)}
+function moveMonth(n){cmn+=n;if(cmn<0){cmn=11;cy--}if(cmn>11){cmn=0;cy++}sel={y:cy,m:cmn,d:Math.min(sel.d,new Date(cy,cmn+1,0).getDate())};cal()}
+$('#cp').onclick=()=>moveMonth(-1);
+$('#cn').onclick=()=>moveMonth(1);
+$('.ca-d').title='Kembali ke hari ini';$('.ca-d').onclick=()=>{calReset();cal()};
+$('#cg').addEventListener('click',e=>{const c=e.target.closest('.c');if(!c)return;sel={y:cy,m:cmn,d:+c.dataset.d};cal()});
+function noteForm(on){$('#cf').hidden=!on;$('#ct').hidden=on;if(on){$('#ci').value='';$('#ci').focus()}}
+$('#ct').onclick=()=>noteForm(true);
+$('#cf').onsubmit=e=>{e.preventDefault();const v=$('#ci').value.trim();if(v){const k=nk(sel.y,sel.m,sel.d);(NOTES[k]=NOTES[k]||[]).push(v);saveNotes()}noteForm(false);cal()};
+$('#ci').addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Escape'){noteForm(false);$('#ct').focus()}});
+calReset();cal();onPage.ca=()=>{calReset();noteForm(false);cal()};onPage.mu=wk;
 /* cuaca (Open-Meteo, tanpa kunci API) */
 const CITIES=[['Jakarta',-6.2,106.85],['Rangkasbitung',-6.36,106.25],['Bandung',-6.91,107.61],['Surabaya',-7.25,112.75],['Yogyakarta',-7.8,110.36]];
 let ci=Math.min(CITIES.length-1,Math.max(0,parseInt(store.get('city',0))||0)),wxLoaded=-1;
